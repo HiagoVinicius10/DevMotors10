@@ -48,17 +48,14 @@ export async function generateMetadata({params}: { params: {slug: string}}): Pro
 }
 
 
-export default  async function PageDetail({
-    params: {  slug }
-}:{
-    params: {slug: string}
-}){
+export default  async function PageDetail(
+    {params}: {params: { slug: string} }
+){
     
-
     return(
         <>
         <Suspense fallback={<LoadingPage/>}>
-            <Content slug={slug}/>
+            <Content slug={params.slug}/>
         </Suspense>
         </>
     )
