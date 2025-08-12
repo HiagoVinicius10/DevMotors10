@@ -6,14 +6,10 @@ import { Suspense } from "react"
 import { LoadingPage } from "./components/loading"
 
 
-export async function generateMetadata({
-    params: {slug}
-}: {
-    params: {slug: string}
-}): Promise<Metadata>{
+export async function generateMetadata({params}: { params: {slug: string}}): Promise<Metadata>{
 
     try{
-        const {objects}: PostProp = await getBySlug(slug)
+        const {objects}: PostProp = await getBySlug(params.slug)
         .catch(()=> {
             return{
             title: "DevMotors - Sua oficina especializada!",
