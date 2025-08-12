@@ -5,8 +5,14 @@ import { Content } from "./components/content"
 import { Suspense } from "react"
 import { LoadingPage } from "./components/loading"
 
+type PageProps ={
+    params:{
+        slug: string
+    }
+}
 
-export async function generateMetadata({params}: { params: {slug: string}}): Promise<Metadata>{
+
+export async function generateMetadata({params}: PageProps): Promise<Metadata>{
 
     try{
         const {objects}: PostProp = await getBySlug(params.slug)
@@ -49,8 +55,7 @@ export async function generateMetadata({params}: { params: {slug: string}}): Pro
 
 
 export default  async function PageDetail(
-    {params}: {params: { slug: string} }
-){
+    {params}: PageProps){
     
     return(
         <>
