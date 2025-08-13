@@ -26,7 +26,7 @@ export default function About({object}: HomeProps){
                 </article>
             </section>
 
-            <h2 className={styles.servicesTitle}>Conheça os nosso Serviços
+            <h2 className={styles.servicesTitle}>Conheça os nossos Serviços
             </h2> 
 
             <section className={styles.services}>
